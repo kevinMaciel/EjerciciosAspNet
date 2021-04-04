@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Vuelos.Models.Vuelos>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Modificacion</h2>
+
+<table id="" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Horario llegada</th>
+        <th>Vuelo</th>
+        <th>Linea Aerea</th>
+        <th>Demorado</th>
+        <th>Modificar</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    @foreach (var vuelos in Model)
+    {
+        <tr>
+            <td>@vuelos.HorarioLlegada</td>
+            <td>@vuelos.NumVuelo</td>
+            <td>@vuelos.LineaArea</td>
+
+
+            @if (vuelos.Demorado == true)
+            {
+                <td>Si</td>
+            }
+            else
+            {
+                <td>No</td>
+            }
+
+
+            <td>@Html.ActionLink("Modificar", "Details", "Modificacion", new { id = vuelos.Id }, null)</td>
+
+           
+
+        </tr>
+    }
+
+    </tbody>
+</table>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    <script>
+
+    
+    </script>
+}

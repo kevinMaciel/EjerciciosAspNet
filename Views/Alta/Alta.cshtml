@@ -1,0 +1,44 @@
+﻿@using System.Web.UI.WebControls
+@model Vuelos.Models.Vuelos
+@{
+    ViewBag.Title = "Alta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}   
+
+<h2>Alta</h2>
+
+@using (Html.BeginForm("Save", "Alta"))
+{   
+    @Html.ValidationSummary()
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumVuelo)
+        @Html.TextBoxFor(m => m.NumVuelo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NumVuelo,null)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.HorarioLlegada)
+        @Html.TextBoxFor(m => m.HorarioLlegada, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.HorarioLlegada, null)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LineaArea)
+        @Html.TextBoxFor(m => m.LineaArea, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LineaArea, null)
+    </div>
+
+
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Demorado) Demorado
+        </label>
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    //@Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+}
