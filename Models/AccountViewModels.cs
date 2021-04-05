@@ -69,6 +69,9 @@ namespace Vydly2.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(255)]
+        public string Phone { get; set; }
+        [Required]
         [Display(Name ="Driving License")]
         public string DrivingLicense { get; set; }
         [Required]
