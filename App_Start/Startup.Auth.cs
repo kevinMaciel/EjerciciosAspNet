@@ -54,9 +54,9 @@ namespace Vydly2
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "442687190166645",
+               appSecret: "8e66d7b9b59b10ec91fe2e86a975daea");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
